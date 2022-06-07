@@ -1,38 +1,35 @@
-package data;
+package submit;
 
 public class Monster {
 	
-	int str;
-	int hp;
-	int mp;
-	String type;
-	
-	final String[] TYPE = {"WATER", "FIRE", "EARTH", "AIR"};
-	
-	public Monster() {
-		int randomType = (int) (Math.random() * (TYPE.length));
-		this.type = this.TYPE[randomType];
-		System.out.println(this.type + "의 몬스터가 생성되었습니다.");
-		this.str = 10;
-		this.hp = 100;
-		this.mp = 200;
-	}
-	
-	public void attack(Player1 target) {
-		target.hp -= this.str;
-		
-		System.out.println("attack!");
-	}
-	
-	public void defense() {
-		System.out.println("defense!");
-	}
+	 public String name;
+	    public int str;
+	    public int hp;
+	    public int mp;
+	    //public String type = null;
+	    //final private String[] TYPE = {"FIRE", "WATER", "EARTH", "AIR"};
+	    
+	    public Monster(String name) {
+	        this.name = name;
+	        this.str = 10;
+	        this.hp = 100;
+	        this.mp = 100;
+	        //this.type = this.TYPE[((int) (Math.random() * (this.TYPE.length)))];
+	        
+	    }
+	    
+	    public void attack(Player player) {
+	        player.hp -= this.str;
+	    }
+	    
+	    public void defense() {
+	        System.out.println("defense");
+	    }
+	    
+	    public void attackAll(Player[] party) {
+	        for (int i = 0; i < party.length; i++) {
+	            this.attack(party[i]);
+	        }
+	    }
 
-	public void attackAll(Player1[] party) {
-		for (int i = 0; i < party.length; i++) {
-			this.attack(party[i]);
-			
-		}
-		
-	}
 }
