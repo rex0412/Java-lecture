@@ -1,23 +1,19 @@
-package submit;
+package day10;
+
+import java.util.Scanner;
 
 public class Test01 {
-	
+
 	public static void main(String[] args) {
 		
-		int[][] arr = new int [3][3];
+		Scanner s = new Scanner(System.in);
+		String userInput = s.next();
 		
-		for (int i = 0; i < 3; i++) {
-			for (int j = 1; j < 4; j++) {
-				arr[i][j-1] = 3*i+j;
-				
-			}
-		}
+		String userInput2 = s.nextLine();
 		
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
-				System.out.print(arr[i][j]);
-			}
-			System.out.println();
-		}
+		System.out.println(userInput);
+		System.out.println(userInput2);
+
 	}
+
 }
